@@ -1,0 +1,14 @@
+body {
+	background: pink;
+}
+
+.vertically-centered {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.horizontally-centered {
+	text-align: center;
+	margin: auto;
+}
