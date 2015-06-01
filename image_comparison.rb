@@ -12,8 +12,9 @@ end
 post "/compare_images" do
 	# compare_images(params[:first_image], params[:second_image])
 	# ChunkPNG::Image.from_file('')
-	compare_images(ChunkyPNG::Image.from_file('square_one.png'),ChunkyPNG::Image.from_file('square_two.png'))
-	redirect '/'
+	compare_images(ChunkyPNG::Image.from_file("public/#{params[:first_image]}"), ChunkyPNG::Image.from_file("public/#{params[:second_image]}"))
+	# message = {message:'hello'}
+	# json :message
 end
 
 post '/upload' do
@@ -46,18 +47,20 @@ __END__
 
 @@index
 <link rel="stylesheet" href="style.css" type="text/css"/>
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="image_comparison.js"></script>
 <div class="horizontally-centered vertically-centered">
 	<form action='/upload' enctype="multipart/form-data" method='POST'>
 	    <input name="file" type="file" />
 	    <input type="submit" value="Upload" />
 	</form>
 	<div class="horizontal-scroll">
-		<% @images.each do |image| %>
-			<img src=<%=image[7..-1]%>>
+		<% @images.each_with_index do |image, index| %>
+			<img src=<%=image[7..-1]%> id="image<%=index%>" class="uploaded-image">
 		<% end %>
 	</div>
 	<form method="post" action="/compare_images">
-		<button action="/compare_images">compare</button>
+		<button action="/compare_images" id="compareButton">compare</button>
 	</form>
 	<p>most recent comparison:</p>
 <img src="/uploads/output/output.png">

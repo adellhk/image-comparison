@@ -12,3 +12,11 @@ body {
 	text-align: center;
 	margin: auto;
 }
+
+.uploaded-image:hover {
+	border: 2px solid black;
+}
+
+.selected {
+	border: 2px solid black;
+}
