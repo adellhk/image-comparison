@@ -47,14 +47,14 @@ __END__
 
 @@index
 <link rel="stylesheet" href="style.css" type="text/css"/>
-<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="image_comparison.js"></script>
 <div class="horizontally-centered vertically-centered">
 	<form action='/upload' enctype="multipart/form-data" method='POST'>
 	    <input name="file" type="file" />
 	    <input type="submit" value="Upload" />
 	</form>
-	<div class="horizontal-scroll">
+	<div class="horizontal-scroll vertical-scroll">
 		<% @images.each_with_index do |image, index| %>
 			<img src=<%=image[7..-1]%> id="image<%=index%>" class="uploaded-image">
 		<% end %>

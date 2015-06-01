@@ -1,4 +1,4 @@
-var server = 'http://localhost:9393/';
+var server = 'https://image-comparison.herokuapp.com/';
 imgSelections = [];
 
 $(document).ready(function() {
