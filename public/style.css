@@ -29,3 +29,7 @@ body {
 	overflow-y: scroll;
 	max-height: 50vh;
 }
+
+img {
+	max-height: 25vh;
+}
