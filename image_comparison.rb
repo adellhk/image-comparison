@@ -50,6 +50,7 @@ __END__
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="image_comparison.js"></script>
 <div class="horizontally-centered vertically-centered">
+	<h1>Image Comparison Tool!</h1>
 	<form action='/upload' enctype="multipart/form-data" method='POST'>
 	    <input name="file" type="file" />
 	    <input type="submit" value="Upload" />
