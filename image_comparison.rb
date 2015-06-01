@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'byebug'
+# require 'byebug'
 require 'chunky_png'
 include ChunkyPNG::Color
 include FileUtils::Verbose
